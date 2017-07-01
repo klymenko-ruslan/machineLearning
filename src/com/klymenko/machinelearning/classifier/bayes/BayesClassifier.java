@@ -35,7 +35,6 @@ public class BayesClassifier extends Classifier {
         double matchedInCategory = matchingProbability(rowsInCategory, modelForPrediction);
         double probabilityThatThisCategory = givenProbabilityOfCategory * matchedInCategory / matchedInDataset;
         category = Double.isNaN(probabilityThatThisCategory) ? "UNKNOWN" : category;
-        System.out.println(category + " and " + givenProbabilityOfCategory + " and " + probabilityThatThisCategory + " and" + matchedInCategory + " abd " + matchedInDataset);
         return new Pair(category, probabilityThatThisCategory);
     }
     private List<Row> filterByCategory(DataSet dataSet, String category) {
